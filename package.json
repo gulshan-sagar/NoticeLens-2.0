@@ -1,0 +1,14 @@
+{
+  "name": "noticelens-hackathon-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["server", "client"],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c blue,green \"npm run dev --workspace=noticelens-server\" \"npm run dev --workspace=noticelens-client\"",
+    "build": "npm run build --workspace=noticelens-client",
+    "start": "npm run start --workspace=noticelens-server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
